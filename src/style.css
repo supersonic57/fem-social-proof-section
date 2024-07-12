@@ -97,6 +97,7 @@ img {
 @media screen and (min-width: 1000px) {
   .container .top .section-ratings {
     align-items: flex-end;
+    justify-content: center;
   }
 }
 .container .top .section-ratings .rating {

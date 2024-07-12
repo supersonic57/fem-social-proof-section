@@ -99,6 +99,7 @@ $breakpoint-6: 1300px;
 
       @media screen and (min-width: $breakpoint-4) {
         align-items: flex-end;
+        justify-content: center;
       }
 
       .rating {
