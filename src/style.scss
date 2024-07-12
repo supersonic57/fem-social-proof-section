@@ -1,0 +1,214 @@
+@import "reset";
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+// Colors
+
+$clr-very-dark-magenta: hsl(300, 43%, 22%);
+$clr-soft-pink: hsl(333, 80%, 67%);
+$clr-dark-grayish-magenta: hsl(303, 10%, 53%);
+$clr-light-grayish-magenta: hsl(300, 24%, 96%);
+$clr-white: hsl(0, 0%, 100%);
+
+// Breakpoints
+
+$breakpoint-1: 500px;
+$breakpoint-2: 600px;
+$breakpoint-3: 800px;
+$breakpoint-4: 1000px;
+$breakpoint-5: 1100px;
+$breakpoint-6: 1300px;
+
+// Styling
+
+.container {
+  padding: 85px 25px;
+  font-family: "League Spartan", sans-serif;
+
+  @media screen and (min-width: $breakpoint-2) {
+    padding: 85px 50px;
+  }
+
+  @media screen and (min-width: $breakpoint-3) {
+    padding: 85px;
+  }
+
+  @media screen and (min-width: $breakpoint-6) {
+    padding: 120px 180px;
+  }
+
+  .container-bg-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @media screen and (max-width: $breakpoint-2) {
+      img {
+        width: 100vw;
+      }
+    }
+  }
+
+  .top {
+    color: $clr-very-dark-magenta;
+    text-align: center;
+    font-weight: 700;
+
+    @media screen and (min-width: $breakpoint-4) {
+      text-align: left;
+      display: grid;
+      grid-template-columns: 40% 60%;
+      margin-bottom: 30px;
+    }
+
+    .section-title-and-description {
+      h1.title {
+        font-size: 2.5rem;
+        line-height: 0.7;
+        margin-bottom: 35px;
+
+        @media screen and (min-width: $breakpoint-4) {
+          font-size: 3.3rem;
+          line-height: 0.9;
+          margin-bottom: 25px;
+        }
+      }
+
+      p.description {
+        font-size: 1.075rem;
+        line-height: 1.3;
+        font-weight: 500;
+        color: $clr-dark-grayish-magenta;
+        margin-bottom: 35px;
+
+        @media screen and (min-width: $breakpoint-4) {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .section-ratings {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 45px;
+      
+      @media screen and (min-width: $breakpoint-1) {
+        align-items: center;
+      }
+
+      @media screen and (min-width: $breakpoint-4) {
+        align-items: flex-end;
+      }
+
+      .rating {
+        background-color: $clr-light-grayish-magenta;
+        border-radius: 8px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @media screen and (min-width: $breakpoint-1) {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+          width: 450px;
+        }
+
+        &.mr-single {
+          @media screen and (min-width: $breakpoint-5) {
+            margin-right: 50px;
+          }
+        }
+
+        &.mr-double {
+          @media screen and (min-width: $breakpoint-5) {
+            margin-right: 100px;
+          }
+        }
+
+        .stars {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+        }
+      }
+    }
+  }
+
+  .section-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @media screen and (min-width: $breakpoint-3) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .review {
+      background-color: $clr-very-dark-magenta;
+      border-radius: 8px;
+      padding: 30px;
+      color: $clr-white;
+
+      &.ty-single {
+        @media screen and (min-width: $breakpoint-4) {
+          transform: translateY(20px);
+        }
+      }
+
+      &.ty-double {
+        @media screen and (min-width: $breakpoint-4) {
+          transform: translateY(40px);
+        }
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 25px;
+
+        img {
+          width: 40px;
+          border-radius: 50%;
+        }
+
+        .reviewer-identity {
+          line-height: 1.2;
+          
+          h2.name {
+            font-weight: 700;
+          }
+
+          p.verification {
+            color: $clr-soft-pink;
+          }
+        }
+      }
+
+      p.review-text {
+        font-weight: 500;
+        font-size: 1.05rem;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  .container-bg-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    @media screen and (max-width: $breakpoint-2) {
+      img {
+        width: 100vw;
+      }
+    }
+  }
+}
